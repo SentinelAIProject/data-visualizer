@@ -85,27 +85,27 @@ if uploaded_file is not None:
                     # Create the chart based on type
                     if chart_type == "Line Chart":
                         fig = px.line(df, x=x_axis, y=y_axis, color=color_by,
-                                      title=chart_title, template=color_theme)
+                                      title=chart_title,)
 
                     elif chart_type == "Bar Chart":
                         fig = px.bar(df, x=x_axis, y=y_axis, color=color_by,
-                                     title=chart_title, template=color_theme)
+                                     title=chart_title,)
 
                     elif chart_type == "Scatter Plot":
                         fig = px.scatter(df, x=x_axis, y=y_axis, color=color_by,
-                                         title=chart_title, template=color_theme)
+                                         title=chart_title,)
 
                     elif chart_type == "Pie Chart":
                         fig = px.pie(df, names=x_axis, values=y_axis,
-                                     title=chart_title, template=color_theme)
+                                     title=chart_title,)
 
                     elif chart_type == "Area Chart":
                         fig = px.area(df, x=x_axis, y=y_axis, color=color_by,
-                                      title=chart_title, template=color_theme)
+                                      title=chart_title)
 
                     elif chart_type == "Histogram":
                         fig = px.histogram(df, x=x_axis, color=color_by,
-                                           title=chart_title, template=color_theme)
+                                           title=chart_title)
 
                     # Make it interactive and nice
                     fig.update_layout(
