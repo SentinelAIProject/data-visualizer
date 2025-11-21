@@ -120,27 +120,14 @@ if uploaded_file is not None:
                     # Download options
                     st.subheader("💾 Download Your Chart")
 
-                    col_dl1, col_dl2 = st.columns(2)
-
-                    with col_dl1:
-                        # Download as HTML (interactive)
-                        html_buffer = fig.to_html()
-                        st.download_button(
-                            label="📥 Download as Interactive HTML",
-                            data=html_buffer,
-                            file_name=f"{chart_title}.html",
-                            mime="text/html"
-                        )
-
-                    with col_dl2:
-                        # Download as PNG
-                        img_bytes = fig.to_image(format="png", width=1200, height=800)
-                        st.download_button(
-                            label="📥 Download as PNG Image",
-                            data=img_bytes,
-                            file_name=f"{chart_title}.png",
-                            mime="image/png"
-                        )
+                    # Download button removed, just keep HTML
+                    html_buffer = fig.to_html()
+                    st.download_button(
+                        label="📥 Download as Interactive HTML",
+                        data=html_buffer,
+                        file_name=f"{chart_title}.html",
+                        mime="text/html"
+                    )
 
                 except Exception as e:
                     st.error(f"❌ Error creating chart: {str(e)}")
